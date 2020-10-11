@@ -35,7 +35,5 @@ var x = setInterval(function() {
 	if(month > 8 && month <= 12) raspust = "зимски";
 	else if(month >= 0 && month <= 5) raspust = "летен";
 
-	document.getElementById("day-timer").innerHTML = days + den;
-	document.getElementById("hms-timer").innerHTML = hours + chas + minutes + minuta + seconds + sekunda;
 	document.getElementById("vd").innerHTML = raspust + " распуст:";
 }, 1000);
