@@ -1,4 +1,6 @@
-var countDownDate = new Date("Jun 10, 2020 12:00:00").getTime();
+var endDate = "10 Jun";
+var endYear = "2021";
+var countDownDate = new Date(endDate + ", " + endYear + " 12:00:00").getTime();
 
 var x = setInterval(function() {
 	var now = new Date().getTime();
@@ -16,35 +18,20 @@ var x = setInterval(function() {
 
 	var rabotni_dena = days - 7; 
 
-	if(seconds == 1 || seconds == 21 || seconds == 31 || seconds == 41 || seconds == 51) {
-		sekunda = " секунда ";
-	} else {
-		sekunda = " секунди ";
-	}
+	if(seconds % 10 == 1 && seconds != 11) sekunda = "секунда";
+	else sekunda = "секунди";
 
-	if(minutes == 1 || minutes == 21 || minutes == 31 || minutes == 41 || minutes == 51) {
-		minuta = " минута ";
-	} else {
-		minuta = " минути ";
-	}
+	if(minutes % 10 == 1 && minutes != 11) minuta = "минута";
+	else minuta = "минути";
 
-	if(hours == 1 || hours == 21 || hours == 31 || hours == 41 || hours == 51) {
-		chas = " час ";
-	} else {
-		chas = " часа ";
-	}
+	if(hours == 1 || hours == 21) chas = "час";
+	else chas = "часа";
 
-	if(days == 1 || days == 21 || days == 31 || days == 41 || days == 51) {
-		den = " ден ";
-	} else {
-		den = " дена ";
-	}
+	if(days % 10 == 1 && days != 11) den = "ден";
+	else den = "дена";
 
-	if(month >= 8 && month < 0) {
-		raspust = "зимски";
-	} else if(month >= 0 && month <= 5) {
-		raspust = "летен";
-	}
+	if(month >= 8 && month <= 12) raspust = "зимски";
+	else if(month >= 0 && month <= 5) raspust = "летен";
 
 	document.getElementById("day-timer").innerHTML = days + den;
 	document.getElementById("hms-timer").innerHTML = hours + chas + minutes + minuta + seconds + sekunda;
