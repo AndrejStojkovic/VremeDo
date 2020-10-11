@@ -17,7 +17,7 @@ var x = setInterval(function() {
 	if(days % 10 == 1 && days != 11) document.getElementById("day-timer").innerHTML = days + " ден";
 	else document.getElementById("day-timer").innerHTML = days + " дена";
 	
-	if(hours == 1 || hours == 21) document.getElementById("htimer").innerHTML; = hours + " час";
+	if(hours == 1 || hours == 21) document.getElementById("htimer").innerHTML = hours + " час";
 	else document.getElementById("htimer").innerHTML; = hours + " часа";
 	
 	if(minutes % 10 == 1 && minutes != 11)  document.getElementById("mtimer").innerHTML = minutes + " минута";
