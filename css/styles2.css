@@ -23,7 +23,7 @@
 	user-select: none;
 }
 
-.hms-timer {
+#hms-timer {
 	position: relative;
 	color: #ffde6b;
 	font-family: "Poiret One";
