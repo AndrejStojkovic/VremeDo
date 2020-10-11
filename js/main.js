@@ -15,22 +15,24 @@ var x = setInterval(function() {
 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 	var sekunda, minuta, chas, den;
+	var dayTimer = document.getElementById("day-timer").innerHTML;
+	var hTimer = document.getElementById("htimer").innerHTML;
+	var mTimer = document.getElementById("mtimer").innerHTML;
+	var sTimer = document.getElementById("stimer").innerHTML;
+	
+	if(days % 10 == 1 && days != 11) dayTimer = days + " ден";
+	else dayTimer = days + " дена";
+	
+	if(hours == 1 || hours == 21) hTimer = hours + " час";
+	else hTimer = hours + " часа";
+	
+	if(minutes % 10 == 1 && minutes != 11)  mTimer = minutes + " минута";
+	else mTimer = minutes + " минути";
 
-	var rabotni_dena = days - 7; 
+	if(seconds % 10 == 1 && seconds != 11) sTimer = seconds + " секунда";
+	else sTimer = seconds + " секунди";
 
-	if(seconds % 10 == 1 && seconds != 11) sekunda = "секунда";
-	else sekunda = "секунди";
-
-	if(minutes % 10 == 1 && minutes != 11) minuta = "минута";
-	else minuta = "минути";
-
-	if(hours == 1 || hours == 21) chas = "час";
-	else chas = "часа";
-
-	if(days % 10 == 1 && days != 11) den = "ден";
-	else den = "дена";
-
-	if(month >= 8 && month <= 12) raspust = "зимски";
+	if(month > 8 && month <= 12) raspust = "зимски";
 	else if(month >= 0 && month <= 5) raspust = "летен";
 
 	document.getElementById("day-timer").innerHTML = days + den;
